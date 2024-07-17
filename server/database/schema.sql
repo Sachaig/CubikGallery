@@ -1,12 +1,25 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  password varchar(255) not null
+CREATE TABLE products (
+  id INT unsigned PRIMARY KEY auto_increment NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    image_url VARCHAR(255)
 );
 
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
+CREATE TABLE orders (
+    id INT unsigned PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE
 );
+
+
+CREATE TABLE products_order (
+    id INT unsigned PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    quantity INT NOT NULL,
+    product_id INT unsigned NOT NULL,
+    order_id INT unsigned NOT NULL,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+);
+
