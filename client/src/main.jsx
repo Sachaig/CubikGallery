@@ -1,15 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Home from "./pages/Home";
+import Creations from "./pages/Creations";
+import Custom from "./pages/Custom";
 import App from "./App";
 
 const router = createBrowserRouter([
   {
+  element: <App />,
+		children: [
+  {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
+  {
+    path: "/creations",
+    element: <Creations />,
+  },
+  {
+    path: "/custom",
+    element: <Custom />,
+  },
+  ],
+}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

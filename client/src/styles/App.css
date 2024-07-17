@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* FadeIn Effect */
+
+.fade-in {
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 80px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem;
+  background-color: white;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  margin-right: auto;
+  font-family: "Playfair Display", serif;
+}
+
+.header-nav {
+  display: flex;
+  gap: 8rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 350;
+}
+
+.cart-icon {
+  height: 24px;
+  width: 24px;
+}
+
+footer {
+  background-color: black;
+}
+
+.footer-title {
+  color: rgb(255, 255, 255);
+}
