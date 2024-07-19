@@ -1,0 +1,52 @@
+.user-container {
+  padding: 20px;
+}
+
+.order-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.order-item h2 {
+  margin-top: 0;
+}
+
+.order-item label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.order-item input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.order-product-item {
+  list-style-type: none;
+}
+
+.order-item button {
+  margin-right: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.order-item button:nth-child(1) {
+  background-color: #007bff;
+  color: white;
+}
+
+.order-item button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+.order-item button:nth-child(3) {
+  background-color: #28a745;
+  color: white;
+}

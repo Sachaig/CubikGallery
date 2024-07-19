@@ -1,8 +1,12 @@
-import PropTypes from "prop-types";
+import { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { CartContext } from '../context/CartContext';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 function ProductsList({ products }) {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <>
       <h1 className="title">Nos créations originales</h1>
@@ -16,7 +20,9 @@ function ProductsList({ products }) {
               alt={`Jeu: ${product.name}`}
             />
             <h2 className="price-list">{product.price}€</h2>
-            <button type="button" className="buy-button">Acheter</button>
+            <button className="buy-button" type="button" onClick={() => addToCart(product)}>
+              Ajouter au panier
+            </button>
           </li>
         ))}
       </ul>
@@ -36,3 +42,4 @@ ProductsList.propTypes = {
 };
 
 export default ProductsList;
+

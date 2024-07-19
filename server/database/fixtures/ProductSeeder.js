@@ -20,7 +20,7 @@ class ProductSeeder extends AbstractSeeder {
         image_url: "/artwork/artwork4.png",
       },
       {
-        name: "Edouard aux mains d'argent",
+        name: "Edouard",
         description: "taille : 160x100cm",
         price: 140,
         image_url: "/artwork/artwork7.png",

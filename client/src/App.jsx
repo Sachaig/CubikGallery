@@ -1,56 +1,17 @@
-import { Outlet, Link } from "react-router-dom";
-import { FiShoppingCart } from "react-icons/fi";
-import Logo from "./assets/images/CubikGalleryLogo.png";
-import BlackLogo from "./assets/images/BlackCubikGalleryLogo.png";
-import "./styles/App.css";
+
+import { Outlet } from 'react-router-dom';
+import './styles/App.css';
+import { CartProvider } from './context/CartContext';
+import Header from './components/Header';
 
 function App() {
   return (
-    <>
-      <header className="header">
-        <img src={Logo} alt="CubikGallery Logo" className="logo" />
-        <Link to="/" className="header-title">
-          CubikGallery
-        </Link>
-        <nav className="header-nav">
-          <Link to="/creations" className="nav-link">
-            Nos créations
-          </Link>
-          <Link to="/custom" className="nav-link">
-            Sur demande
-          </Link>
-          <Link to="/cart" className="nav-link">
-            <FiShoppingCart className="cart-icon" />
-          </Link>
-        </nav>
-      </header>
+    <CartProvider>
+      <Header />
       <Outlet />
-      <footer>
-        <img src={BlackLogo} alt="CubikGallery Logo" className="logo" />
-        <Link to="/" className="footer-title">
-          CubikGallery
-        </Link>
-        <ul className="footer-list">
-          <li>
-            <Link to="/" className="footer-element">
-              Accueil
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/creations" className="footer-element">
-              Nos créations
-            </Link>
-          </li>
-          <li>
-            <Link to="/custom" className="footer-element">
-              Sur demande
-            </Link>
-          </li>
-        </ul>
-      </footer>
-    </>
+    </CartProvider>
   );
 }
 
 export default App;
+
